@@ -88,12 +88,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/48x48/apps/kalarm.png
 %{_iconsdir}/hicolor/64x64/apps/kalarm.png
 %{_datadir}/kalarm
-%{_datadir}/kconf_update/kalarm-1.2.1-general.pl
-%{_datadir}/kconf_update/kalarm-1.9.5-defaults.pl
-%{_datadir}/kconf_update/kalarm-15.08-kickoff.sh
-%{_datadir}/kconf_update/kalarm-2.0.2-general.pl
-%{_datadir}/kconf_update/kalarm-2.1.5-general.pl
-%{_datadir}/kconf_update/kalarm-version.pl
+%attr(755,root,root) %{_datadir}/kconf_update/kalarm-1.2.1-general.pl
+%attr(755,root,root) %{_datadir}/kconf_update/kalarm-1.9.5-defaults.pl
+%attr(755,root,root) %{_datadir}/kconf_update/kalarm-15.08-kickoff.sh
+%attr(755,root,root) %{_datadir}/kconf_update/kalarm-2.0.2-general.pl
+%attr(755,root,root) %{_datadir}/kconf_update/kalarm-2.1.5-general.pl
+%attr(755,root,root) %{_datadir}/kconf_update/kalarm-version.pl
 %{_datadir}/kconf_update/kalarm.upd
 %dir %{_datadir}/kxmlgui5/kalarm
 %{_datadir}/kxmlgui5/kalarm/kalarmui.rc
