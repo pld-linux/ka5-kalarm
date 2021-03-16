@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kalarm
 Summary:	kalarm
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ed0b01c26e17b187faa3ab0a043090f7
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	07d1fe23ebc550af2e1178ce97278b82
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -73,17 +73,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/dbus-1/system.d/org.kde.kalarm.rtcwake.conf
 /etc/xdg/autostart/kalarm.autostart.desktop
-/etc/xdg/kalarm.categories
-/etc/xdg/kalarm.renamecategories
 %attr(755,root,root) %{_bindir}/kalarm
 %attr(755,root,root) %{_bindir}/kalarmautostart
 %{_prefix}/libexec/kauth/kalarm_helper
 %{_desktopdir}/org.kde.kalarm.desktop
 %{_datadir}/config.kcfg/kalarmconfig.kcfg
 %{_datadir}/dbus-1/interfaces/org.kde.kalarm.kalarm.xml
-%{_datadir}/dbus-1/system-services/org.kde.kalarm.rtcwake.service
 %{_iconsdir}/hicolor/128x128/apps/kalarm.png
 %{_iconsdir}/hicolor/16x16/apps/kalarm.png
 %{_iconsdir}/hicolor/22x22/apps/kalarm.png
@@ -102,3 +98,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kxmlgui5/kalarm/kalarmui.rc
 %{_datadir}/metainfo/org.kde.kalarm.appdata.xml
 %{_datadir}/polkit-1/actions/org.kde.kalarm.rtcwake.policy
+%{_datadir}/dbus-1/system-services/org.kde.kalarm.rtcwake.service
+%{_datadir}/dbus-1/system.d/org.kde.kalarm.rtcwake.conf
+%{_datadir}/qlogging-categories5/kalarm.categories
+%{_datadir}/qlogging-categories5/kalarm.renamecategories
+%{_datadir}/knotifications5/kalarm.notifyrc
