@@ -49,6 +49,20 @@ color and font customization • Support for multiple alarm calendars,
 which for example enables you to share alarms between a laptop and
 desktop computer.
 
+%description -l pl.UTF-8
+KAlarm jest osobistym budzikiem i harmonogramem.
+
+Własciwości
+
+• Wyświetla własne wiadomości tekstowe, lub tekst wygenerowany przez program,
+  lub wyświetla plik tekstowy bądź obrazek
+• Dźwiękowe powiadomomienia
+• Powtarzalne alarmy, o określonej godzinie/minucie, dzienne, tygodniowe,
+  miesięczne lub roczne a także wyzwalane wtedy gdy się zalogujesz
+• Możliwość konfiguracji koloru i rodzaju czcionki
+• Wsparcie dla wielu kalendarzy powiadomień, co pozwala na przykład
+  współdzielić alarmy między laptopem a komputerem stacjonarnym
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
