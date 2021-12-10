@@ -1,15 +1,15 @@
-%define		kdeappsver	21.08.3
+%define		kdeappsver	21.12.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kalarm
 Summary:	kalarm
 Name:		ka5-%{kaname}
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d8238d61b89d9885f4e9ef783f7f077c
+# Source0-md5:	791d3ce6ed5749862c5b2a956c48264b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -101,13 +101,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/48x48/apps/kalarm.png
 %{_iconsdir}/hicolor/64x64/apps/kalarm.png
 %{_datadir}/kalarm
-%attr(755,root,root) %{_datadir}/kconf_update/kalarm-1.2.1-general.pl
-%attr(755,root,root) %{_datadir}/kconf_update/kalarm-1.9.5-defaults.pl
-%attr(755,root,root) %{_datadir}/kconf_update/kalarm-15.08-kickoff.sh
-%attr(755,root,root) %{_datadir}/kconf_update/kalarm-2.0.2-general.pl
-%attr(755,root,root) %{_datadir}/kconf_update/kalarm-2.1.5-general.pl
-%attr(755,root,root) %{_datadir}/kconf_update/kalarm-version.pl
-%{_datadir}/kconf_update/kalarm.upd
 %dir %{_datadir}/kxmlgui5/kalarm
 %{_datadir}/kxmlgui5/kalarm/kalarmui.rc
 %{_datadir}/metainfo/org.kde.kalarm.appdata.xml
