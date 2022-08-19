@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.04.3
+%define		kdeappsver	22.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kalarm
 Summary:	kalarm
 Name:		ka5-%{kaname}
-Version:	22.04.3
+Version:	22.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	cdba3c4067a66958f1758f01670cae3a
+# Source0-md5:	49d58d8ac7b40fd846c7869ad86c30ee
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
@@ -123,5 +123,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories5/kalarm.categories
 %{_datadir}/qlogging-categories5/kalarm.renamecategories
 %{_datadir}/knotifications5/kalarm.notifyrc
-%ghost %{_libdir}/libkalarmprivate.so.5
-%attr(755,root,root) %{_libdir}/libkalarmprivate.so.*.*.*
+%ghost %{_libdir}/libkalarmcalendar.so.5
+%{_libdir}/libkalarmcalendar.so.*.*.*
+%ghost %{_libdir}/libkalarmplugin.so.5
+%{_libdir}/libkalarmplugin.so.*.*.*
+%dir %{_libdir}/qt5/plugins/pim5/kalarm
+%{_libdir}/qt5/plugins/pim5/kalarm/akonadiplugin.so
