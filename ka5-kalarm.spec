@@ -1,21 +1,21 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.04.3
+%define		kdeappsver	23.08.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kalarm
 Summary:	kalarm
 Name:		ka5-%{kaname}
-Version:	23.04.3
-Release:	2
+Version:	23.08.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ef9ab710857c59348f25ecb61a996e7a
+# Source0-md5:	53e7d6651e6614a1f4ac29824782bb8a
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.20
 BuildRequires:	ka5-akonadi-devel >= 18.04.0
 BuildRequires:	ka5-kcalutils-devel >= %{kdeappsver}
 BuildRequires:	ka5-kimap-devel >= %{kdeappsver}
@@ -71,18 +71,16 @@ laptopem a komputerem stacjonarnym
 %setup -q -n %{kaname}-%{version}
 
 %build
-install -d build
-cd build
 %cmake \
+	-B build \
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DHTML_INSTALL_DIR=%{_kdedocdir} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	..
-%ninja_build
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+%ninja_build -C build
 
 %if %{with tests}
-ctest
+ctest --test-dir build
 %endif
 
 
@@ -113,6 +111,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/kalarm.png
 %{_iconsdir}/hicolor/48x48/apps/kalarm.png
 %{_iconsdir}/hicolor/64x64/apps/kalarm.png
+%{_iconsdir}/breeze-dark/16x16/actions/show-today.svg
+%{_iconsdir}/breeze-dark/22x22/actions/show-today.svg
+%{_iconsdir}/breeze/16x16/actions/show-today.svg
+%{_iconsdir}/breeze/22x22/actions/show-today.svg
 %{_datadir}/kalarm
 %dir %{_datadir}/kxmlgui5/kalarm
 %{_datadir}/kxmlgui5/kalarm/kalarmui.rc
