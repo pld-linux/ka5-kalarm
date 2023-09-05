@@ -8,7 +8,7 @@
 Summary:	kalarm
 Name:		ka5-%{kaname}
 Version:	23.08.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
@@ -111,6 +111,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/kalarm.png
 %{_iconsdir}/hicolor/48x48/apps/kalarm.png
 %{_iconsdir}/hicolor/64x64/apps/kalarm.png
+%dir %{_iconsdir}/breeze/16x16
+%dir %{_iconsdir}/breeze/16x16/actions
+%dir %{_iconsdir}/breeze/22x22
+%dir %{_iconsdir}/breeze/22x22/actions
+%dir %{_iconsdir}/breeze-dark/16x16
+%dir %{_iconsdir}/breeze-dark/16x16/actions
+%dir %{_iconsdir}/breeze-dark/22x22
+%dir %{_iconsdir}/breeze-dark/22x22/actions
 %{_iconsdir}/breeze-dark/16x16/actions/show-today.svg
 %{_iconsdir}/breeze-dark/22x22/actions/show-today.svg
 %{_iconsdir}/breeze/16x16/actions/show-today.svg
