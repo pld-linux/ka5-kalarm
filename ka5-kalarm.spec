@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.1
+%define		kdeappsver	23.08.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kalarm
 Summary:	kalarm
 Name:		ka5-%{kaname}
-Version:	23.08.1
+Version:	23.08.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	49b0864c26fc1985ad0327ae276b3816
+# Source0-md5:	2c00d62d490ed795fa884338920c01ba
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	cmake >= 3.20
@@ -111,19 +111,19 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/32x32/apps/kalarm.png
 %{_iconsdir}/hicolor/48x48/apps/kalarm.png
 %{_iconsdir}/hicolor/64x64/apps/kalarm.png
-%dir %{_iconsdir}/breeze/16x16
-%dir %{_iconsdir}/breeze/16x16/actions
-%dir %{_iconsdir}/breeze/22x22
-%dir %{_iconsdir}/breeze/22x22/actions
-%dir %{_iconsdir}/breeze-dark/16x16
-%dir %{_iconsdir}/breeze-dark/16x16/actions
-%dir %{_iconsdir}/breeze-dark/22x22
-%dir %{_iconsdir}/breeze-dark/22x22/actions
-%{_iconsdir}/breeze-dark/16x16/actions/show-today.svg
-%{_iconsdir}/breeze-dark/22x22/actions/show-today.svg
-%{_iconsdir}/breeze/16x16/actions/show-today.svg
-%{_iconsdir}/breeze/22x22/actions/show-today.svg
 %{_datadir}/kalarm
+%dir %{_iconsdir}/breeze
+%dir %{_iconsdir}/breeze/actions
+%dir %{_iconsdir}/breeze/actions/16
+%dir %{_iconsdir}/breeze/actions/22
+%dir %{_iconsdir}/breeze-dark
+%dir %{_iconsdir}/breeze-dark/actions
+%dir %{_iconsdir}/breeze-dark/actions/16
+%dir %{_iconsdir}/breeze-dark/actions/22
+%{_iconsdir}/breeze-dark/actions/16/show-today.svg
+%{_iconsdir}/breeze-dark/actions/22/show-today.svg
+%{_iconsdir}/breeze/actions/16/show-today.svg
+%{_iconsdir}/breeze/actions/22/show-today.svg
 %dir %{_datadir}/kxmlgui5/kalarm
 %{_datadir}/kxmlgui5/kalarm/kalarmui.rc
 %{_datadir}/metainfo/org.kde.kalarm.appdata.xml
